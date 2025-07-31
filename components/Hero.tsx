@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { motion } from "motion/react";
 import Link from "next/link";
 
-const CTASection = () => {
+const Hero = () => {
   const secondaryLinks = [
     {
       label: "Github",
@@ -24,7 +24,7 @@ const CTASection = () => {
   ];
   return (
     <motion.section
-      className="pt-20 px-6 text-center text-primary dark:bg-gray-900 dark:text-white border-b-[0.15px] border-neutral-300 mt-12"
+      className="pt-10 px-6 text-center text-primary dark:bg-gray-900 dark:text-white border-b-[0.15px] border-neutral-300 mt-12"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -70,4 +70,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection;
+export default Hero;
