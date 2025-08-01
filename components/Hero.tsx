@@ -1,58 +1,117 @@
 // components/CTASection.tsx
 "use client";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
+import { SiLeetcode, SiWakatime, SiFrontendmentor } from "react-icons/si";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [width, setWpix] = useState<number | null>(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWpix(window.innerWidth);
+    }
+  }, []);
+  const sizeSecIcon = width != null && width > 1040 ? 40 : 24;
   const secondaryLinks = [
     {
       label: "Github",
-      icon: <FaGithub size={24} />,
+      icon: <FaGithub size={sizeSecIcon} />,
       href: "https://github.com/MSAndromeda",
     },
     {
-      label: "LinkedIn",
-      icon: <FaLinkedin size={24} />,
-      href: "https://linkedin.com/in/manas-anand-singh-2414321b8/",
+      label: "LeetCode",
+      icon: <SiLeetcode size={sizeSecIcon} />,
+      href: "https://leetcode.com/manasanandsingh/",
     },
     {
+      label: "WakaTime",
+      icon: <SiWakatime size={sizeSecIcon} />,
+      href: "https://wakatime.com/@MSAndromeda",
+    },
+    // {
+    //   label: "Frontend Mentor",
+    //   icon: <SiFrontendmentor size={24} />,
+    //   href: "https://www.frontendmentor.io/profile/MSAndromeda",
+    // },
+    {
       label: "Resume",
-      icon: <FaFileAlt size={24} />,
+      icon: <FaFileAlt size={sizeSecIcon} />,
       href: "/resume.pdf",
     },
   ];
   return (
     <motion.section
-      className="pt-10 px-6 text-center text-primary dark:bg-gray-900 dark:text-white border-b-[0.15px] border-neutral-300 mt-12"
+      className="pt-10 md:py-15 px-6 lg:pt-40 lg:pb-20 text-center text-primary dark:bg-gray-900 dark:text-white border-b-[0.15px] border-neutral-300 mt-12"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">Manas Anand Singh</h1>
-      <p className="text-lg text-secondary dark:text-gray-300 mb-8">
+      <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold mb-4">
+        Manas Anand Singh
+      </h1>
+      <p className="text-lg lg:text-3xl text-secondary dark:text-gray-300 mb-8 lg:my-12">
         I'm a software engineer with a passion for builiding scalable and
         efficient systems. I'm currently working as a software engineer at my
         home
       </p>
       {/* Primary CTAs */}
-      <div className="mb-18 flex flex-col md:flex-row justify-center items-center gap-4">
-        <Link
-          href="/projects"
-          className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-sm font-medium transition duration-300"
-        >
-          View Projects
+      <div className="mb-10 sm:mb-18 lg:mt-20 flex flex-row justify-center items-center gap-4">
+        <Link className="perspective-[1000px] transform-3d" href="/projects">
+          <motion.button
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
+            whileHover={{
+              rotateX: 10,
+              rotateY: 25,
+              rotateZ: -10,
+              translateZ: 80,
+            }}
+            whileTap={{
+              rotateX: 0,
+              rotateY: 0,
+              rotateZ: 0,
+              translateZ: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+          >
+            View Projects
+          </motion.button>
         </Link>
         <Link
-          href="/contact"
-          className="border border-primary hover:bg-primary hover:text-white text-primary dark:border-white dark:hover:bg-white dark:hover:text-black dark:text-white px-6 py-3 rounded-full text-sm font-medium transition duration-300"
+          href="https://linkedin.com/in/manas-anand-singh-2414321b8/"
+          className="perspective-[1000px] transform-3d"
         >
-          Contact Me
+          <motion.button
+            whileHover={{
+              rotateX: 10,
+              rotateY: -25,
+              rotateZ: 10,
+              translateZ: 80,
+            }}
+            whileTap={{
+              rotateZ: 0,
+              rotateX: 0,
+              rotateY: 0,
+              translateZ: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="flex items-center-safe gap-x-2 border border-primary hover:bg-primary hover:text-white text-primary dark:border-white dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
+          >
+            <FaLinkedin size={width != null && width > 640 ? 24 : 16} />
+            Lets Connect
+          </motion.button>
         </Link>
       </div>
       {/* Secondary CTA's */}
-      <div className="mb-2 pb-2 flex gap-5 justify-center">
+      <div className="mb-2 pb-2 flex gap-5 lg:gap-8 justify-center">
         {secondaryLinks.map((link, idx) => (
           <Link
             key={idx}
@@ -62,7 +121,18 @@ const Hero = () => {
             className="text-gray-600 hover:text-black dark:text-gray-500 dark:hover:text-white transition"
             aria-label={link.label}
           >
-            {link.icon}
+            <motion.button
+              whileHover={{
+                scale: 1.5,
+              }}
+              // transition={{
+              //   duration: 0.3,
+              //   ease: "easeInOut",
+              // }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              {link.icon}
+            </motion.button>
           </Link>
         ))}
       </div>

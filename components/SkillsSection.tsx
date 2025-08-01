@@ -88,12 +88,16 @@ const SkillsSection = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 tracking-tight text-primary">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 tracking-tight text-primary">
         Tech I Work With
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-6 max-w-4xl mx-auto">
+      <div className="grid justify-items-center-safe grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6 max-w-4xl mx-auto">
         {skills.map((skill) => (
-          <motion.div key={skill.name} whileHover={{ scale: 1.05 }}>
+          <motion.div
+            key={skill.name}
+            whileHover={{ scale: 1.15 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
             {skill.icon}
           </motion.div>
         ))}

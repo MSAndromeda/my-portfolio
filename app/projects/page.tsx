@@ -78,7 +78,7 @@ export default function ProjectPage() {
     <div className="min-h-screen flex items-start justify-start">
       <Container className="min-h-10 p-4">
         <section className="pt-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 tracking-tight text-primary">
+          <h2 className="text-2xl md:text-4xl mt-10 font-bold text-center mb-2 tracking-tight text-primary">
             Projects
           </h2>
           <Projects projects={projects} />

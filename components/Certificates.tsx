@@ -3,23 +3,25 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 
-interface Proj {
+interface Certificate {
   title: string;
   src: string;
   description: string;
-  techStack: string[];
-  liveLink: string;
-  githubLink: string;
+  Link: string;
 }
 
-export const Projects = ({ projects }: { projects: Proj[] }) => {
+export const Certificates = ({
+  certificates,
+}: {
+  certificates: Certificate[];
+}) => {
   return (
     <div className="text-center">
-      <p className="text-secondary text-center text-lg md:text-xl lg:text-3xl pt-4 lg:my-6">
-        I love building web apps and products that can impact millions of lives
+      <p className="text-secondary text-center text-lg md:text-sm pt-4">
+        Various certifications that i have recieved
       </p>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 py-4">
-        {projects.map((project, idx) => (
+        {certificates.map((certificate, idx) => (
           <motion.div
             initial={{
               opacity: 0,
@@ -40,17 +42,17 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
             className="group relative"
           >
             <Image
-              src={project.src}
-              alt={project.title}
+              src={certificate.src}
+              alt={certificate.title}
               height={300}
               width={300}
               className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
             />
-            <h2 className="my-4 text-xl sm:text-3xl font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
-              {project.title}
+            <h2 className="mt-2 font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
+              {certificate.title}
             </h2>
-            <p className="mt-1 text-[1rem] sm:text-2xl text-neutral-500 dark:text-neutral-400">
-              {project.description}
+            <p className="max-w-sm mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+              {certificate.description}
             </p>
           </motion.div>
         ))}

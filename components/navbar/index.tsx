@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../container";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,23 +25,26 @@ export const Navbar = () => {
       title: "Certifications",
       href: "/certifications",
     },
-    {
-      title: "Contact",
-      href: "/contact",
-    },
   ];
   const [hovered, setHovered] = useState<number | null>(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [wpix, setWpix] = useState<number | null>(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWpix(window.innerWidth);
+    }
+  }, []);
 
   const y = useTransform(scrollY, [0, 100], [0, 10]);
-  const width = useTransform(scrollY, [0, 100], ["50%", "40%"]);
-  const opacity = useTransform(scrollY, [0, 100], [1, 0.8]);
-  const filter = useMotionTemplate`blur(${useTransform(
+  const width = useTransform(
     scrollY,
     [0, 100],
-    [0, 10]
-  )}px)`;
+    [
+      wpix != null && wpix < 640 ? "100%" : "70%",
+      wpix != null && wpix < 640 ? "90%" : "60%",
+    ]
+  );
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) setScrolled(true);
@@ -54,14 +57,8 @@ export const Navbar = () => {
           boxShadow: scrolled ? "var(--shadow-navbar)" : "none",
           width,
           y,
-          opacity,
-          // filter,
         }}
-        // transition={{
-        //   duration: 0.6,
-        //   ease: "easeInOut",
-        // }}
-        className="fixed inset-x-0 top-0 z-50 rounded-full bg-white max-w-4xl mx-auto flex items-center justify-between px-4 py-2 dark:bg-neutral-900"
+        className="fixed inset-x-0 top-0 z-50 rounded-full max-w-4xl mx-auto flex items-center justify-between px-4 py-2 dark:bg-neutral-900 bg-white-400 bg-clip-padding backdrop-filter backdrop-blur-[6px] bg-opacity-10"
       >
         <Link href="/">
           <Image
@@ -69,13 +66,13 @@ export const Navbar = () => {
             height={100}
             width={100}
             alt="Avatar"
-            className="h-10 w-10 rounded-full"
+            className="relative z-20 h-10 w-10 lg:h-15 lg:w-15 rounded-full"
           />
         </Link>
         <div className="flex items-center">
           {navItems.map((item, idx) => (
             <Link
-              className="text-sm relative px-2 py-1"
+              className="text-sm lg:text-2xl relative px-2 py-1 lg:px-4 lg:py-2"
               href={item.href}
               key={idx}
               onMouseEnter={() => setHovered(idx)}
@@ -87,7 +84,9 @@ export const Navbar = () => {
                   className="h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-neutral-800"
                 ></motion.span>
               )}
-              <span className="relative z-10">{item.title}</span>
+              <span className="relative z-20 text-secondary hover:text-primary transition duration-300">
+                {item.title}
+              </span>
             </Link>
           ))}
         </div>
