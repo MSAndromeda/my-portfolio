@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   motion,
-  useMotionTemplate,
   useMotionValueEvent,
   useScroll,
   useTransform,
@@ -58,7 +57,7 @@ export const Navbar = () => {
           width,
           y,
         }}
-        className="fixed inset-x-0 top-0 z-50 rounded-full max-w-4xl mx-auto flex items-center justify-between px-4 py-2 dark:bg-neutral-900 bg-white-400 bg-clip-padding backdrop-filter backdrop-blur-[6px] bg-opacity-10"
+        className="fixed inset-x-0 top-0 z-50 rounded-full max-w-4xl mx-auto flex items-center justify-between px-4 py-2 backdrop-filter backdrop-blur-[6px]"
       >
         <Link href="/">
           <Image
@@ -72,7 +71,7 @@ export const Navbar = () => {
         <div className="flex items-center">
           {navItems.map((item, idx) => (
             <Link
-              className="text-sm lg:text-2xl relative px-2 py-1 lg:px-4 lg:py-2"
+              className="text-sm lg:text-2xl relative px-2 py-1 lg:px-4 lg:py-2 text-slate-400 hover:text-primary transition duration-300"
               href={item.href}
               key={idx}
               onMouseEnter={() => setHovered(idx)}
@@ -81,12 +80,16 @@ export const Navbar = () => {
               {hovered === idx && (
                 <motion.span
                   layoutId="hovered-span"
-                  className="h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-neutral-800"
+                  // initial={{
+                  //   opacity: 0,
+                  // }}
+                  // animate={{
+                  //   opacity: 1,
+                  // }}
+                  className="h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-neutral-800 "
                 ></motion.span>
               )}
-              <span className="relative z-20 text-secondary hover:text-primary transition duration-300">
-                {item.title}
-              </span>
+              <span className="relative z-20">{item.title}</span>
             </Link>
           ))}
         </div>

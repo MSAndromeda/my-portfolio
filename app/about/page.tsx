@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+// import Image from "next/image";
+import { motion } from "motion/react";
 import Container from "@/components/container";
 import Footer from "@/components/Footer";
 
@@ -22,7 +24,22 @@ export default function AboutPage() {
           </div> */}
 
         {/* Bio and personality */}
-        <div className="space-y-4 text-secondary text-sm md:text-base">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 200,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          className="space-y-4 text-secondary text-sm md:text-base"
+        >
           <p>
             Hi, I'm <strong>Manas Anand Singh</strong> — a self-taught Web
             developer passionate about building interactive, minimalist user
@@ -71,7 +88,7 @@ export default function AboutPage() {
             Fun fact: I love breaking down complex problems and animating ideas
             to life.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Spacer before footer */}

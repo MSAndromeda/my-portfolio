@@ -38,6 +38,7 @@ export const Certificates = ({
               filter: "blur(0px)",
               y: 0,
             }}
+            viewport={{ once: true }}
             key={idx}
             className="group relative"
           >
@@ -51,7 +52,7 @@ export const Certificates = ({
             <h2 className="mt-2 font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
               {certificate.title}
             </h2>
-            <p className="max-w-sm mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+            <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
               {certificate.description}
             </p>
           </motion.div>

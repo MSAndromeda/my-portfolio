@@ -95,8 +95,8 @@ const SkillsSection = () => {
         {skills.map((skill) => (
           <motion.div
             key={skill.name}
-            whileHover={{ scale: 1.15 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.25 }}
+            transition={{ type: "spring", stiffness: 1000, damping: 7 }}
           >
             {skill.icon}
           </motion.div>

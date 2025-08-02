@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
+import { CercularIconGen } from "./CercularIconGen";
 
 interface Proj {
   title: string;
@@ -20,7 +21,7 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
       </p>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 py-4">
         {projects.map((project, idx) => (
-          <motion.div
+          <motion.article
             initial={{
               opacity: 0,
               filter: "blur(10px)",
@@ -36,6 +37,7 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
               filter: "blur(0px)",
               y: 0,
             }}
+            viewport={{ once: true }}
             key={idx}
             className="group relative"
           >
@@ -49,10 +51,11 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
             <h2 className="my-4 text-xl sm:text-3xl font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
               {project.title}
             </h2>
-            <p className="mt-1 text-[1rem] sm:text-2xl text-neutral-500 dark:text-neutral-400">
+            <p className="mt-1 mb-4 text-[1rem] sm:text-2xl text-neutral-500 dark:text-neutral-400">
               {project.description}
             </p>
-          </motion.div>
+            <CercularIconGen icons={project.techStack} />
+          </motion.article>
         ))}
       </div>
     </div>
