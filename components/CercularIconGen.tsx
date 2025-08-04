@@ -47,8 +47,8 @@ export const CercularIconGen = ({
     hover: { zIndex: 10 },
   };
   const iconVariants = {
-    initial: { scaleX: 0, opacity: 0, width: "0px" },
-    hover: { scaleX: 1, opacity: 1, width: "auto" },
+    initial: { scaleX: 0, opacity: 0, width: "0px", x: 0 },
+    hover: { scaleX: 1, opacity: 1, width: "auto", x: 2 },
   };
   return (
     <div className="flex items-center justify-center mt-10">
@@ -60,7 +60,7 @@ export const CercularIconGen = ({
             variants={containerVariants}
             initial="initial"
             whileHover="hover"
-            className={`w-fit h-10 p-1 rounded-full border-1 dark:border-white bg-neutral-50 border-neutral-300 dark:bg-neutral-800 flex items-center justify-start text-xl  ${
+            className={`w-fit h-10 p-1 rounded-full border-1 border-[var(--color-border)] bg-[var(--color-container-background)] flex items-center justify-start text-xl ${
               idx !== 0 ? "-ml-3" : ""
             }`}
           >
@@ -70,7 +70,7 @@ export const CercularIconGen = ({
               transition={{
                 ease: "easeInOut",
               }}
-              className="opacity-0 text-sm text-slate-500 select-none origin-left inline-block"
+              className="opacity-0 text-sm text-[var(--color-text)] select-none origin-left inline-block"
             >
               {icon}
             </motion.span>

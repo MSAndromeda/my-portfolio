@@ -10,8 +10,8 @@ export default function Home() {
     <div className="min-h-screen flex items-start justify-start">
       <Container className="min-h-10 p-4">
         <Hero />
-        <section className="pt-5 sm:pt-10 lg:pb-10 border-b-[0.15px] border-neutral-300">
-          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-2 tracking-tight text-primary">
+        <section className="pt-5 sm:pt-10 lg:pb-10 border-b-[0.15px] border-[var(--color-border)]">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-center mb-2 tracking-tight text-[var(--color-heading)]">
             Featured Projects
           </h2>
           <Projects projects={projects.slice(0, 2)} />

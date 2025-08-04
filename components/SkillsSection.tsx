@@ -66,7 +66,7 @@ const skills: Skill[] = [
   },
   {
     name: "MySQL",
-    icon: <SiMysql size={40} className="text-blue-700" />,
+    icon: <SiMysql size={40} className="text-blue-700 dark:text-blue-500" />,
   },
 
   // Tools & Misc
@@ -75,27 +75,31 @@ const skills: Skill[] = [
     icon: <SiPostman size={40} className="text-orange-600" />,
   },
   { name: "Figma", icon: <SiFigma size={40} className="text-pink-500" /> },
-  { name: "Java", icon: <DiJava size={40} className="text-blue-600" /> },
+  {
+    name: "Java",
+    icon: <DiJava size={40} className="text-blue-600 dark:text-blue-400" />,
+  },
   { name: "Python", icon: <FaPython size={40} className="text-blue-400" /> },
 ];
 
 const SkillsSection = () => {
   return (
     <motion.section
-      className="py-10 px-6 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+      className="py-10 px-6 transition-colors duration-300"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 tracking-tight text-primary">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 tracking-tight text-[var(--color-heading)]">
         Tech I Work With
       </h2>
       <div className="grid justify-items-center-safe grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6 max-w-4xl mx-auto">
         {skills.map((skill) => (
           <motion.div
             key={skill.name}
-            whileHover={{ scale: 1.25 }}
+            className="p-1 rounded-md"
+            whileHover={{ scale: 1.3 }}
             transition={{ type: "spring", stiffness: 1000, damping: 7 }}
           >
             {skill.icon}

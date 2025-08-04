@@ -17,7 +17,7 @@ export const Certificates = ({
 }) => {
   return (
     <div className="text-center">
-      <p className="text-secondary text-center text-lg md:text-sm pt-4">
+      <p className="text-[var(--color-sub-heading)] text-center text-lg md:text-xl lg:test-2xl pt-4">
         Various certifications that i have recieved
       </p>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 py-4">
@@ -49,10 +49,10 @@ export const Certificates = ({
               width={300}
               className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
             />
-            <h2 className="mt-2 font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
+            <h2 className="mt-2 font-medium md:text-base lg:text-xl tracking-tight text-[var(--color-sub-heading)]">
               {certificate.title}
             </h2>
-            <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+            <p className="mt-1 text-xs md:text-sm lg:text-base text-[var(--color-text)]">
               {certificate.description}
             </p>
           </motion.div>

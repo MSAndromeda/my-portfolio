@@ -16,7 +16,7 @@ interface Proj {
 export const Projects = ({ projects }: { projects: Proj[] }) => {
   return (
     <div className="text-center">
-      <p className="text-secondary text-center text-lg md:text-xl lg:text-3xl pt-4 lg:my-6">
+      <p className="text-[var(--color-sub-heading)] text-center text-lg md:text-xl lg:text-2xl pt-4 lg:my-6">
         I love building web apps and products that can impact millions of lives
       </p>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 py-4">
@@ -48,10 +48,10 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
               width={300}
               className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
             />
-            <h2 className="my-4 text-xl sm:text-3xl font-medium tracking-tight text-neutral-500 dark:text-neutral-400">
+            <h3 className="my-4 text-xl sm:text-3xl font-medium tracking-tight text-[var(--color-sub-heading)]">
               {project.title}
-            </h2>
-            <p className="mt-1 mb-4 text-[1rem] sm:text-2xl text-neutral-500 dark:text-neutral-400">
+            </h3>
+            <p className="mt-1 mb-4 text-[1rem] sm:text-2xl text-[var(--color-text)]">
               {project.description}
             </p>
             <CercularIconGen icons={project.techStack} />

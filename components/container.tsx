@@ -9,7 +9,7 @@ const Container = ({
 }) => {
   return (
     <div
-      className={`max-w-5xl mx-auto w-full bg-white dark:bg-black ${className}`}
+      className={`max-w-5xl mx-auto w-full bg-[var(--color-container-background)] ${className}`}
     >
       {children}
     </div>

@@ -43,16 +43,16 @@ const Hero = () => {
   ];
   return (
     <motion.section
-      className="pt-10 md:py-15 px-6 lg:pt-40 lg:pb-20 text-center text-primary dark:bg-gray-900 dark:text-white border-b-[0.15px] border-neutral-300 mt-12"
+      className="pt-10 md:py-15 px-6 lg:pt-40 lg:pb-20 text-center border-b-[0.15px] border-[var(--color-border)] mt-12"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold mb-4">
+      <h1 className="text-[var(--color-heading)] text-2xl sm:text-4xl lg:text-6xl font-bold mb-4">
         Manas Anand Singh
       </h1>
-      <p className="text-lg lg:text-3xl text-secondary dark:text-gray-300 mb-8 lg:my-12">
+      <p className="text-lg lg:text-3xl text-[var(--color-sub-heading)] mb-8 lg:my-12">
         I'm a software engineer with a passion for builiding scalable and
         efficient systems. I'm currently working as a software engineer at my
         home
@@ -103,7 +103,7 @@ const Hero = () => {
               duration: 0.3,
               ease: "easeInOut",
             }}
-            className="flex items-center-safe gap-x-2 border border-primary hover:bg-primary hover:text-white text-primary dark:border-white dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
+            className="flex items-center-safe gap-x-2 border border-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white text-primary dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
           >
             <FaLinkedin size={width != null && width > 640 ? 24 : 16} />
             Lets Connect
@@ -118,7 +118,7 @@ const Hero = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-black dark:text-gray-500 dark:hover:text-white transition"
+            className="text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition"
             aria-label={link.label}
           >
             <motion.button

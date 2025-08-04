@@ -65,8 +65,8 @@ export default function ProjectPage() {
     <div className="min-h-screen flex items-start justify-start">
       <Container className="min-h-10 p-4">
         <section className="pt-20">
-          <h2 className="text-2xl md:text-4xl font-bold text-center sm:mb-2 tracking-tight text-primary">
-            Certiciates
+          <h2 className="text-2xl md:text-4xl font-bold text-center sm:mb-2 tracking-tight text-[var(--color-heading)]">
+            Certificates
           </h2>
           <Certificates certificates={certificates} />
         </section>
