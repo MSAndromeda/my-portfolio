@@ -41,7 +41,7 @@ export default function AboutPage() {
           className="space-y-4 text-sub-heading text-sm md:text-base"
         >
           <p>
-            Hi, I'm <strong>Manas Anand Singh</strong> — a self-taught Web
+            Hi, I'm <strong>Manas Anand Singh</strong> a self-taught Web
             developer passionate about building interactive, minimalist user
             interfaces.
           </p>
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <p>
             I started with HTML, CSS, and JavaScript, slowly diving into
             building real-world projects with <strong>React</strong>. Over time,
-            I became obsessed with animations — now exploring{" "}
+            I became obsessed with animations now exploring{" "}
             <strong>Framer Motion</strong> and <strong>Anime.js</strong> to
             bring smooth, expressive UI to life.
           </p>
@@ -61,7 +61,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            I also focus deeply on Data Structures and Algorithms — solving
+            I also focus deeply on Data Structures and Algorithms solving
             problems daily on <strong>LeetCode</strong> and following{" "}
             <strong>Striver’s DSA roadmap</strong> to build a strong
             problem-solving mindset.
@@ -69,8 +69,8 @@ export default function AboutPage() {
 
           <p>
             My learning approach is highly project-based. Whether it's
-            animation-heavy portfolios, dashboards, or full-stack applications —
-            I build to truly understand.
+            animation-heavy portfolios, dashboards, or full-stack applications I
+            build to truly understand.
           </p>
 
           <p>

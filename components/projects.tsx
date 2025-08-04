@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import { CercularIconGen } from "./CercularIconGen";
+import Link from "next/link";
 
 interface Proj {
   title: string;
@@ -39,7 +40,7 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
             }}
             viewport={{ once: true }}
             key={idx}
-            className="group relative"
+            className="group relative flex flex-col items-center gap-4"
           >
             <Image
               src={project.src}
@@ -48,13 +49,22 @@ export const Projects = ({ projects }: { projects: Proj[] }) => {
               width={300}
               className="w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
             />
-            <h3 className="my-4 text-xl sm:text-3xl font-medium tracking-tight text-[var(--color-sub-heading)]">
+            <h3 className="text-xl sm:text-3xl font-medium tracking-tight text-[var(--color-sub-heading)]">
               {project.title}
             </h3>
-            <p className="mt-1 mb-4 text-[1rem] sm:text-2xl text-[var(--color-text)]">
+            <p className="text-[1rem] sm:text-2xl text-[var(--color-text)]">
               {project.description}
             </p>
             <CercularIconGen icons={project.techStack} />
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="cursor-pointer flex items-center-safe gap-x-2 border border-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white text-primary dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-xs font-medium transition duration-300 lg:text-xl">
+                Github Link
+              </button>
+            </Link>
           </motion.article>
         ))}
       </div>

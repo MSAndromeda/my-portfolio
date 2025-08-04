@@ -2,9 +2,10 @@
 "use client";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { SiLeetcode, SiWakatime, SiFrontendmentor } from "react-icons/si";
-import { motion } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
   const [width, setWpix] = useState<number | null>(null);
@@ -41,6 +42,29 @@ const Hero = () => {
       href: "/resume.pdf",
     },
   ];
+  const controlsProject = useAnimation();
+  const controlsConnect = useAnimation();
+  const router = useRouter();
+
+  const handleProjectClick = async () => {
+    await controlsProject.start({
+      rotateZ: 0,
+      rotateX: 0,
+      rotateY: 0,
+      translateZ: 0,
+      scale: 0.9,
+    });
+    router.push("/projects");
+  };
+  const handleConnectClick = () => {
+    controlsConnect.start({
+      rotateZ: 0,
+      rotateX: 0,
+      rotateY: 0,
+      translateZ: 0,
+      scale: 0.9,
+    });
+  };
   return (
     <motion.section
       className="pt-10 md:py-15 px-6 lg:pt-40 lg:pb-20 text-center border-b-[0.15px] border-[var(--color-border)] mt-12"
@@ -59,21 +83,18 @@ const Hero = () => {
       </p>
       {/* Primary CTAs */}
       <div className="mb-10 sm:mb-18 lg:mt-20 flex flex-row justify-center items-center gap-4">
-        <Link className="perspective-[1000px] transform-3d" href="/projects">
+        <div className="perspective-[1000px] transform-3d select-text">
           <motion.button
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
+            className="cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
             whileHover={{
               rotateX: 10,
               rotateY: 25,
               rotateZ: -10,
               translateZ: 80,
+              scale: 1.2,
             }}
-            whileTap={{
-              rotateX: 0,
-              rotateY: 0,
-              rotateZ: 0,
-              translateZ: 0,
-            }}
+            animate={controlsProject}
+            onClick={handleProjectClick}
             transition={{
               duration: 0.3,
               ease: "easeInOut",
@@ -81,10 +102,12 @@ const Hero = () => {
           >
             View Projects
           </motion.button>
-        </Link>
+        </div>
         <Link
           href="https://linkedin.com/in/manas-anand-singh-2414321b8/"
           className="perspective-[1000px] transform-3d"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <motion.button
             whileHover={{
@@ -92,18 +115,15 @@ const Hero = () => {
               rotateY: -25,
               rotateZ: 10,
               translateZ: 80,
+              scale: 1.2,
             }}
-            whileTap={{
-              rotateZ: 0,
-              rotateX: 0,
-              rotateY: 0,
-              translateZ: 0,
-            }}
+            animate={controlsConnect}
+            onClick={handleConnectClick}
             transition={{
               duration: 0.3,
               ease: "easeInOut",
             }}
-            className="flex items-center-safe gap-x-2 border border-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white text-primary dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
+            className="cursor-pointer flex items-center-safe gap-x-2 border border-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white text-primary dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 lg:text-2xl"
           >
             <FaLinkedin size={width != null && width > 640 ? 24 : 16} />
             Lets Connect
@@ -122,6 +142,7 @@ const Hero = () => {
             aria-label={link.label}
           >
             <motion.button
+              className="cursor-pointer"
               whileHover={{
                 scale: 1.5,
               }}
