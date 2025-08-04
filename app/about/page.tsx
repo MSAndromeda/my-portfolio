@@ -41,7 +41,7 @@ export default function AboutPage() {
           className="space-y-4 text-sub-heading text-sm md:text-base"
         >
           <p>
-            Hi, I'm <strong>Manas Anand Singh</strong> a self-taught Web
+            Hi, I&apos;m <strong>Manas Anand Singh</strong> a self-taught Web
             developer passionate about building interactive, minimalist user
             interfaces.
           </p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            My learning approach is highly project-based. Whether it's
+            My learning approach is highly project-based. Whether it&apos;s
             animation-heavy portfolios, dashboards, or full-stack applications I
             build to truly understand.
           </p>

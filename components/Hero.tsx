@@ -1,7 +1,7 @@
 // components/CTASection.tsx
 "use client";
 import { FaGithub, FaLinkedin, FaFileAlt } from "react-icons/fa";
-import { SiLeetcode, SiWakatime, SiFrontendmentor } from "react-icons/si";
+import { SiLeetcode, SiWakatime } from "react-icons/si";
 import { motion, useAnimation } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -54,9 +54,11 @@ const Hero = () => {
       translateZ: 0,
       scale: 0.9,
     });
+    // Add slight delay for animation to be noticeable
+    await new Promise((res) => setTimeout(res, 400));
     router.push("/projects");
   };
-  const handleConnectClick = () => {
+  const handleConnectClick = async () => {
     controlsConnect.start({
       rotateZ: 0,
       rotateX: 0,
@@ -64,6 +66,12 @@ const Hero = () => {
       translateZ: 0,
       scale: 0.9,
     });
+    await new Promise((res) => setTimeout(res, 400));
+    window.open(
+      "https://linkedin.com/in/manas-anand-singh-2414321b8/",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
   return (
     <motion.section
@@ -77,9 +85,9 @@ const Hero = () => {
         Manas Anand Singh
       </h1>
       <p className="text-lg lg:text-3xl text-[var(--color-sub-heading)] mb-8 lg:my-12">
-        I'm a software engineer with a passion for builiding scalable and
-        efficient systems. I'm currently working as a software engineer at my
-        home
+        I&apos;m a software engineer with a passion for builiding scalable and
+        efficient systems. I&apos;m currently working as a software engineer at
+        my home
       </p>
       {/* Primary CTAs */}
       <div className="mb-10 sm:mb-18 lg:mt-20 flex flex-row justify-center items-center gap-4">
@@ -103,12 +111,7 @@ const Hero = () => {
             View Projects
           </motion.button>
         </div>
-        <Link
-          href="https://linkedin.com/in/manas-anand-singh-2414321b8/"
-          className="perspective-[1000px] transform-3d"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="perspective-[1000px] transform-3d">
           <motion.button
             whileHover={{
               rotateX: 10,
@@ -128,7 +131,7 @@ const Hero = () => {
             <FaLinkedin size={width != null && width > 640 ? 24 : 16} />
             Lets Connect
           </motion.button>
-        </Link>
+        </div>
       </div>
       {/* Secondary CTA's */}
       <div className="mb-2 pb-2 flex gap-5 lg:gap-8 justify-center">

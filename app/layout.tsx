@@ -4,7 +4,11 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Providers } from "./providers";
 
-const inter = Inter({ weight: ["400", "500", "600", "700", "800", "900"] });
+const inter = Inter({
+  subsets: ["latin"],
+  preload: true,
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Portfolio Website",
