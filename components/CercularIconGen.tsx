@@ -29,7 +29,7 @@ export const CercularIconGen = ({
       setWpix(window.innerWidth);
     }
   }, []);
-  const iconsize = width != null && width > 1040 ? 30 : 20;
+  const iconsize = width != null && width > 1040 ? 25 : 18;
   const iconMap: { [key: string]: ReactElement } = {
     HTML: <FaHtml5 size={iconsize} className="text-orange-500" />,
     CSS: <FaCss3Alt size={iconsize} className="text-blue-500" />,
@@ -66,9 +66,9 @@ export const CercularIconGen = ({
             variants={containerVariants}
             initial="initial"
             whileHover="hover"
-            className={`w-fit h-fit p-1 rounded-full border-1 border-[var(--color-border)] bg-[var(--color-container-background)] flex items-center justify-start text-xl ${
+            className={`w-fit h-fit p-1 lg:p-2 rounded-full border-1 border-[var(--color-border)] bg-[var(--color-container-background)] flex items-center justify-start text-xl ${
               idx !== 0 ? "-ml-3" : ""
-            }`}
+            } ${idx !== 0 ? "lg:-ml-4" : ""}`}
           >
             <div>{IconComponent}</div>
             <motion.span

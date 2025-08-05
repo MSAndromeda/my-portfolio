@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 export default function AboutPage() {
   return (
     <Container className="min-h-10 p-4 pt-20 md:pb-10">
-      <h1 className="text-2xl text-center md:text-4xl font-bold tracking-tight text-heading">
+      <h1 className="text-2xl text-center md:text-4xl font-bold tracking-tight dark:text-gray-50 text-gray-950">
         About Me
       </h1>
 
@@ -38,7 +38,7 @@ export default function AboutPage() {
             y: 0,
           }}
           viewport={{ once: true }}
-          className="space-y-4 text-sub-heading text-sm md:text-base"
+          className="space-y-4 text-gray-800 dark:text-gray-200 text-sm md:text-base"
         >
           <p>
             Hi, I&apos;m <strong>Manas Anand Singh</strong> a self-taught Web

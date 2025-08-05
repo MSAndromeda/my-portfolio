@@ -81,7 +81,7 @@ export const Navbar = () => {
           width,
           y,
         }}
-        className="fixed inset-x-0 top-0 z-50 bg-neutral-50/5 dark:bg-neutral-900/40 rounded-full max-w-4xl mx-auto flex items-center justify-between px-4 py-2 backdrop-filter backdrop-blur-[6px]"
+        className="fixed inset-x-0 top-0 z-50 bg-slate-50/65 dark:bg-slate-950/65 rounded-full max-w-4xl mx-auto flex items-center justify-between px-4 py-2 backdrop-filter backdrop-blur-[6px]"
       >
         <Link href="/">
           <Image
@@ -110,27 +110,16 @@ export const Navbar = () => {
                   // animate={{
                   //   opacity: 1,
                   // }}
-                  className="h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-neutral-800"
+                  className="h-full w-full absolute inset-0 rounded-md bg-slate-200 dark:bg-slate-800"
                 ></motion.span>
               )}
               <span className="relative z-20">{item.title}</span>
             </Link>
           ))}
           <motion.button
-            className="px-2 py-1 lg:px-4 lg:py-2 rounded-full cursor-pointer text-[var(--color-nav-elements)] hover:text-[var(--color-nav-hover)] hover:bg-neutral-100 hover:dark:bg-neutral-800 transition duration-300"
+            className="px-2 py-1 lg:px-4 lg:py-2 rounded-full cursor-pointer text-[var(--color-nav-elements)] hover:text-[var(--color-nav-hover)] hover:bg-slate-200 hover:dark:bg-slate-800 transition duration-300"
             onClick={() => setTheme(theme ? "light" : "dark")}
           >
-            {!mounted && (
-              <Image
-                src="data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=="
-                width={36}
-                height={36}
-                sizes="36x36"
-                alt="Loading Light/Dark Toggle"
-                priority={false}
-                title="Loading Light/Dark Toggle"
-              />
-            )}
             {mounted && theme ? (
               <FiSun
                 size={iconSize}
