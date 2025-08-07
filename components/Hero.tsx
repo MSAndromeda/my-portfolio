@@ -75,7 +75,7 @@ const Hero = () => {
   };
   return (
     <motion.section
-      className="pt-10 md:py-15 px-6 lg:pt-40 lg:pb-20 text-center border-b-[0.15px] border-[var(--color-border)]"
+      className="pt-10 md:py-15 px-6 lg:pt-40 lg:pb-20 text-center border-b-[0.15px] border-[var(--color-border)] mt-12"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
