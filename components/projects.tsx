@@ -4,15 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { CercularIconGen } from "./CercularIconGen";
 import Link from "next/link";
-
-interface Proj {
-  title: string;
-  src: string;
-  description: string;
-  techStack: string[];
-  liveLink: string;
-  githubLink: string;
-}
+import { Proj } from "@/types/project";
 
 export const Projects = ({ projects }: { projects: Proj[] }) => {
   return (

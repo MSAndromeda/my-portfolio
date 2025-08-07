@@ -2,11 +2,10 @@
 // import Image from "next/image";
 import { motion } from "motion/react";
 import Container from "@/components/container";
-import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   return (
-    <Container className="min-h-10 p-4 pt-20 md:pb-10">
+    <Container className="min-h-10 p-4 pt-20">
       <h1 className="text-2xl text-center md:text-4xl font-bold tracking-tight dark:text-gray-50 text-gray-950">
         About Me
       </h1>
@@ -93,8 +92,6 @@ export default function AboutPage() {
 
       {/* Spacer before footer */}
       <div className="h-15" />
-
-      <Footer />
     </Container>
   );
 }

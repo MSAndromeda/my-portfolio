@@ -1,8 +1,6 @@
-import Container from "@/components/container";
-import Footer from "@/components/Footer";
-import { Projects } from "@/components/projects";
+import { Proj } from "@/types/project";
 
-export const projects = [
+export const projects: Proj[] = [
   {
     title: "Travel from Heart",
     src: "/travelfromheart.png",
@@ -65,19 +63,3 @@ export const projects = [
     githubLink: "https://github.com/MSAndromeda/smart-student-dashboard",
   },
 ];
-
-export default function ProjectPage() {
-  return (
-    <div className="min-h-screen flex items-start justify-start">
-      <Container className="min-h-10 p-4">
-        <section className="pt-10">
-          <h2 className="text-2xl md:text-4xl mt-10 font-bold text-center mb-2 tracking-tight text-primary">
-            Projects
-          </h2>
-          <Projects projects={projects} />
-        </section>
-        <Footer />
-      </Container>
-    </div>
-  );
-}

@@ -1,5 +1,4 @@
 import Container from "@/components/container";
-import Footer from "@/components/Footer";
 import { Certificates } from "@/components/Certificates";
 
 export default function ProjectPage() {
@@ -70,7 +69,6 @@ export default function ProjectPage() {
           </h2>
           <Certificates certificates={certificates} />
         </section>
-        <Footer />
       </Container>
     </div>
   );
