@@ -126,7 +126,7 @@ const Hero = () => {
               duration: 0.3,
               ease: "easeInOut",
             }}
-            className="cursor-pointer flex items-center-safe gap-x-2 border border-[var(--color-border)] hover:bg-[var(--color-primary)] hover:text-white text-primary dark:hover:bg-white dark:hover:text-black dark:text-white px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 ease-in lg:text-2xl"
+            className="cursor-pointer flex items-center-safe gap-x-2 border border-border hover:bg-primary hover:text-white text-primary  dark:hover:text-black px-3 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-medium transition duration-300 ease-in lg:text-2xl"
           >
             <FaLinkedin size={width != null && width > 640 ? 24 : 16} />
             Lets Connect
