@@ -11,6 +11,15 @@ export const projects: Proj[] = [
     githubLink: "https://github.com/MSAndromeda/Natours-Project",
   },
   {
+    title: "YC Startup Directory",
+    src: "/ycDirectory.png",
+    description:
+      "A responsive web app showcasing startups with dynamic search, category filters, and a clean, accessible UI for effortless discovery.",
+    techStack: ["TailwindCSS", "TypeScript", "ShadCN", "NextJs"],
+    liveLink: "",
+    githubLink: "https://github.com/MSAndromeda/my-yc-project",
+  },
+  {
     title: "Quick Notes",
     src: "/quickNotes.png",
     description:

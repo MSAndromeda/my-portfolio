@@ -16,6 +16,7 @@ import {
   SiExpress,
   SiMongodb,
   SiPostman,
+  SiShadcnui,
 } from "react-icons/si";
 
 export const CercularIconGen = ({
@@ -44,6 +45,7 @@ export const CercularIconGen = ({
     NextJs: (
       <SiNextdotjs size={iconsize} className="text-black dark:text-white" />
     ),
+    ShadCN: <SiShadcnui size={iconsize} />,
     Framer: <SiFramer size={iconsize} className="text-pink-500" />,
     Postman: <SiPostman size={iconsize} className="text-orange-600" />,
   };

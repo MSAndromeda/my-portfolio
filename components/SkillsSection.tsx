@@ -20,6 +20,7 @@ import {
   SiMysql,
   SiPostman,
   SiFigma,
+  SiShadcnui,
 } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 
@@ -52,6 +53,10 @@ const skills: Skill[] = [
   {
     name: "Motion",
     icon: <SiFramer size={40} className="text-black dark:text-white" />,
+  },
+  {
+    name: "ShadCN",
+    icon: <SiShadcnui size={40} />,
   },
 
   // Backend
